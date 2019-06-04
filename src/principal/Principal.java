@@ -13,7 +13,7 @@ import mycollections.Stack;
  * @author João Coelho nº39961 EI
  * @author Diogo Ramos nº39954 EI
  */
-public class principal {
+public class Principal {
 
     /**
      * @param args the command line arguments
@@ -30,7 +30,7 @@ public class principal {
         System.out.println("INTEGRIDADE DOS PARÊNTESIS" + st2 + "?" + " : " + verifica(st2));
         String st3 = "{7+{6-{5+{2+2}})";
         System.out.println("INTEGRIDADE DOS PARÊNTESIS" + st3 + "?" + " : " + verifica(st3));
-        String st4 = "{{b{ana]]na}(m)";
+        String st4 = "{{b{ana}}na}(m)";
         System.out.println("INTEGRIDADE DOS PARÊNTESIS" + st4 + "?" + " : " + verifica(st4));
         String st5 = "{j{d{m}d}](m)";
         System.out.println("INTEGRIDADE DOS PARÊNTESIS" + st5 + "?" + " : " + verifica(st5));
@@ -49,29 +49,36 @@ public class principal {
         
 }
      public static boolean verifica(String std){
-         Stack<Integer> pilha = new ArrayStack<>(std.length());
+         Stack<Character> pilha = new ArrayStack<>(std.length());
+       
          
-      
          
+            
          for (int i = 0; i < std.length(); i++){
             char c = std.charAt(i);
-            
 
             if(c == '{' || c == '(' || c == '[' ){
                 pilha.push(c);
             }else{
-                if(c == pilha.top){
+                if( c == '}' && pilha.top() == '{'){
                    pilha.pop();
+                }else{
+                    if( c == ')' && pilha.top() == '('){
+                        pilha.pop();
+                    }else{
+                        if( c == ']' && pilha.top() == '['){
+                          pilha.pop();
+                         }
                 }
             }
          }
+         }
          
          if(pilha.size() == 0){
-             System.out.println("true " + pilha.size());
              return true;
          }else{
-             System.out.println("false " + pilha.size() );
              return false;
          }
 }
 }
+

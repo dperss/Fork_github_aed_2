@@ -48,7 +48,7 @@ public class ArrayStack<E> implements Stack<E> {
     public Iterator<E> iterator(){
         return new ArrayIterator();
     }
-    
+
     private class ArrayIterator implements Iterator<E>{
         private int j=0;
         
