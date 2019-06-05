@@ -5,9 +5,9 @@
  */
 package mycollections;
 
-/**
- *
- * @author Diogo Ramos
+/*
+ * @author João Coelho nº39961 EI
+ * @author Diogo Ramos nº39954 EI
  */
 public interface Stack<E> extends Iterable<E>{
     int size();

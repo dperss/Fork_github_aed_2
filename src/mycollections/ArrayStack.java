@@ -8,9 +8,9 @@ package mycollections;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/**
- *
- * @author Diogo Ramos
+/*
+ * @author João Coelho nº39961 EI
+ * @author Diogo Ramos nº39954 EI
  */
 public class ArrayStack<E> implements Stack<E> {
    
@@ -20,23 +20,49 @@ public class ArrayStack<E> implements Stack<E> {
     
     public ArrayStack(){this(CAPACITY);}
     
+    /**
+     *
+     * @param CAPACITY
+     */
     public ArrayStack(int CAPACITY){
         data= (E[])  new Object[CAPACITY];
     }
+
+    /**
+     *
+     * @return
+     */
     public int size(){return(t+1);}
     
+    /**
+     *
+     * @return
+     */
     public boolean isEmpty(){return (t==-1);}
     
+    /**
+     *
+     * @param e
+     * @throws IllegalStateException
+     */
     public void push(E e) throws IllegalStateException{
         if( size()==data.length) throw new IllegalStateException("Stack is full");
         data[++t]=e;
     }
     
+    /**
+     *
+     * @return
+     */
     public E top(){
         if(isEmpty())return null;
         return data[t];
     }
     
+    /**
+     *
+     * @return
+     */
     public E pop(){
         if(isEmpty())return null;
         E answer= data[t];
