@@ -48,12 +48,16 @@ public class Principal {
         }
         
 }
-     public static boolean verifica(String std){
+
+    /**
+     *
+     * @param std (NAO SEI)
+     * @return true - se a verificação dos parêntises estiver correta e não 
+     * houver parentises mal localizados || return true - se a verificação dos 
+     * parêntises estiver errada e houver parentises mal localizados.
+     */
+    public static boolean verifica(String std){
          Stack<Character> pilha = new ArrayStack<>(std.length());
-       
-         
-         
-            
          for (int i = 0; i < std.length(); i++){
             char c = std.charAt(i);
 

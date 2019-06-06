@@ -5,10 +5,13 @@
  */
 package mycollections;
 
-/*
+/**
+ *
  * @author João Coelho nº39961 EI
  * @author Diogo Ramos nº39954 EI
+ * @param <E> (NAO SEI)
  */
+
 public interface Stack<E> extends Iterable<E>{
     int size();
     boolean isEmpty();

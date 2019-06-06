@@ -8,10 +8,13 @@ package mycollections;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/*
+/**
+ *
  * @author João Coelho nº39961 EI
  * @author Diogo Ramos nº39954 EI
+ * @param <E> (NAO SEI)
  */
+
 public class ArrayStack<E> implements Stack<E> {
    
     private static final int CAPACITY=1000;
@@ -22,7 +25,7 @@ public class ArrayStack<E> implements Stack<E> {
     
     /**
      *
-     * @param CAPACITY
+     * @param Constroi um novo ArrayStack vazio com maximo de capacidade (int CAPACITY)
      */
     public ArrayStack(int CAPACITY){
         data= (E[])  new Object[CAPACITY];
@@ -30,29 +33,29 @@ public class ArrayStack<E> implements Stack<E> {
 
     /**
      *
-     * @return
+     * @return o valor do tamanho do Array através da variavel t.
      */
     public int size(){return(t+1);}
     
     /**
-     *
-     * @return
+     * 
+     * @return se a stack estiver vazia no momento.
      */
     public boolean isEmpty(){return (t==-1);}
     
     /**
      *
-     * @param e
-     * @throws IllegalStateException
+     * @param Empurra um novo item para o topo da stack.
+     * @throws IllegalStateException se a stack se apresentar atualmente cheia.
      */
     public void push(E e) throws IllegalStateException{
-        if( size()==data.length) throw new IllegalStateException("Stack is full");
+        if(size()==data.length) throw new IllegalStateException("Stack is full");
         data[++t]=e;
     }
     
     /**
-     *
-     * @return
+     * 
+     * @return o valor do item que está no topo da stack.
      */
     public E top(){
         if(isEmpty())return null;
@@ -60,8 +63,8 @@ public class ArrayStack<E> implements Stack<E> {
     }
     
     /**
-     *
-     * @return
+     *  Pops o item no topo da stack fora da stack e retorna-o. Caso a stack esteja vazia, o valor retornado é nulo.
+     * @return (NAO SEI)
      */
     public E pop(){
         if(isEmpty())return null;
