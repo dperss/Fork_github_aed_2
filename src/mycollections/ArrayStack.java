@@ -12,7 +12,9 @@ import java.util.NoSuchElementException;
  *
  * @author João Coelho nº39961 EI
  * @author Diogo Ramos nº39954 EI
- * @param <E> (NAO SEI)
+ * 
+ * Classe filha da Stack
+ * @param <E> Tipo de dados génerico.
  */
 
 public class ArrayStack<E> implements Stack<E> {
@@ -24,28 +26,28 @@ public class ArrayStack<E> implements Stack<E> {
     public ArrayStack(){this(CAPACITY);}
     
     /**
-     *
-     * @param Constroi um novo ArrayStack vazio com maximo de capacidade (int CAPACITY)
+     *  Constroi um novo ArrayStack vazio com uma capacidade pré definida.
+     * @param CAPACITY o tamnho do array que nescaso é 1000
      */
     public ArrayStack(int CAPACITY){
         data= (E[])  new Object[CAPACITY];
     }
 
     /**
-     *
+     *  O Tamanho do array.
      * @return o valor do tamanho do Array através da variavel t.
      */
     public int size(){return(t+1);}
     
     /**
-     * 
+     * Um metodo para ver se o array tá vazio.
      * @return se a stack estiver vazia no momento.
      */
     public boolean isEmpty(){return (t==-1);}
     
     /**
-     *
-     * @param Empurra um novo item para o topo da stack.
+     * Empurra um novo item para o topo da stack.
+     * @param e tipo de dados génericos.
      * @throws IllegalStateException se a stack se apresentar atualmente cheia.
      */
     public void push(E e) throws IllegalStateException{
@@ -54,7 +56,7 @@ public class ArrayStack<E> implements Stack<E> {
     }
     
     /**
-     * 
+     * Metodo para ver o valor no top do stack.
      * @return o valor do item que está no topo da stack.
      */
     public E top(){
@@ -63,8 +65,8 @@ public class ArrayStack<E> implements Stack<E> {
     }
     
     /**
-     *  Pops o item no topo da stack fora da stack e retorna-o. Caso a stack esteja vazia, o valor retornado é nulo.
-     * @return (NAO SEI)
+     *  Remove o item no topo da stack e retorna-o.
+     * @return retornao valor no topo da stack e se tiver vazia, o valor retornado é nulo.
      */
     public E pop(){
         if(isEmpty())return null;

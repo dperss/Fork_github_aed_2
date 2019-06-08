@@ -9,7 +9,9 @@ package mycollections;
  *
  * @author João Coelho nº39961 EI
  * @author Diogo Ramos nº39954 EI
- * @param <E> (NAO SEI)
+ * 
+ * 
+ * @param <E> Tipo de dados génerico.
  */
 
 public interface Stack<E> extends Iterable<E>{
